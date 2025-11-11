@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <ul class="list">
+
+      <li class="list__item">
+        <div class="list__button">
+          <i class="fa-solid fa-house list__icon"></i>
+          <a href="#" id="btnInicio" class="nav__link">Inicio</a>
+        </div>
+      </li>
+
+      <li class="list__item list__item--click">
+        <div class="list__button list__button--click">
+          <i class="fa-solid fa-shirt list__icon"></i>
+          <a href="#" class="nav__link">Productos</a>
+          <i class="fa-solid fa-chevron-down list__arrow"></i>
+        </div>
+
+        <ul class="list__show">
+          <li class="list__inside"><a href="#" id="btnPantalones" class="nav__link nav__link--inside">Pantalones</a></li>
+          <li class="list__inside"><a href="#" id="btnAbrigos" class="nav__link nav__link--inside">Abrigos</a></li>
+          <li class="list__inside"><a href="#" id="btnCamisetas" class="nav__link nav__link--inside">Camisetas</a></li>
+          <li class="list__inside"><a href="#" id="btnZapatos" class="nav__link nav__link--inside">Zapatos</a></li>
+          <li class="list__inside"><a href="#" id="btnGorras" class="nav__link nav__link--inside">Gorras</a></li>
+        </ul>
+      </li>
+
+      <li class="list__item">
+        <div class="list__button">
+          <i class="fa-solid fa-cart-shopping list__icon"></i>
+          <a href="#" id="btnCarrito" class="nav__link">Carrito</a>
+        </div>
+      </li>
+
+      <li class="list__item">
+        <div class="list__button">
+          <i class="fa-solid fa-power-off list__icon logout"></i>
+          <a href="#" id="btnCerrarSesion" class="nav__link">Cerrar sesión</a>
+        </div>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div id="contenido" class="contenido"></div> 
+
+  <footer class="footer">© Dylan Solares</footer>
+
+  <!-- MODAL DE COMPRA EXITOSA -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <i class="fa-solid fa-circle-check modal-icon"></i>
+      <h2>¡Compra Exitosa!</h2>
+      <p>🎉 Gracias por tu compra. Tu pago ha sido procesado correctamente (simulado).</p>
+      <button class="modal-btn" onclick="cerrarModal()">Aceptar</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

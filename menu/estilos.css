@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #EAEBEF;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* MENU */
+.nav {
+  width: 300px;
+  position: fixed;
+  height: 100vh;
+}
+
+.nav__link {
+  color: #333;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.list {
+  height: 100%;
+  background: rgba(255,255,255,0.92);
+  padding-top: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 4px 0 12px rgba(0,0,0,0.08);
+}
+
+.list__item {
+  list-style: none;
+  text-align: center;
+}
+
+.list__button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 75%;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 14px 0;
+  transition: .3s ease;
+}
+
+.list__button:hover {
+  transform: translateX(6px);
+}
+
+.list__icon {
+  font-size: 20px;
+  transition: .3s ease;
+}
+
+.list__button:hover .list__icon {
+  color: #6a00ff;
+  transform: scale(1.15);
+}
+
+/* SUBMENÚ */
+.list__show {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-left: 3px solid #6a00ff;
+  transition: height .4s ease, opacity .3s ease;
+}
+
+.arrow + .list__show {
+  opacity: 1;
+}
+
+.nav__link--inside {
+  padding: 14px 35px;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  transition: .25s ease;
+}
+
+.nav__link--inside:hover {
+  background: #f2ebff;
+  color: #6a00ff;
+  transform: translateX(5px);
+}
+
+/* FLECHA */
+.list__arrow {
+  margin-left: auto;
+  transition: .3s ease;
+}
+
+.arrow .list__arrow {
+  transform: rotate(90deg);
+  color: #6a00ff;
+}
+
+/* CONTENIDO */
+.contenido {
+  position: absolute;
+  left: 320px;
+  top: 0;
+  width: calc(100% - 320px);
+  padding: 30px;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* GRID */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+
+/* PRODUCTO CARD */
+.producto-card {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  animation: fadeUp .4s ease;
+}
+
+.producto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.producto-card button {
+  background: linear-gradient(135deg, #6a00ff, #9b00ff);
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 5px 12px rgba(106, 0, 255, 0.3);
+  transition: .3s ease;
+}
+
+.producto-card button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(106,0,255,0.4);
+}
+
+/* CARRITO DISEÑO */
+.carrito-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  margin: 15px 0;
+  transition: 0.3s ease;
+}
+
+.carrito-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.carrito-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.carrito-info {
+  flex: 1;
+}
+
+.cantidad-btn {
+  background: #6a00ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.btn-eliminar {
+  background: #e60000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.total-box {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.btn-general {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.btn-vaciar {
+  background: #f44336;
+}
+
+.btn-comprar {
+  background: #6a00ff;
+}
+
+/* FORMULARIO PAGO */
+.pago-container {
+  max-width: 550px;
+  margin: 30px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.pago-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pago-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 16px;
+}
+
+.pago-input:focus {
+  border-color: #6a00ff;
+  box-shadow: 0 0 8px rgba(106,0,255,0.3);
+}
+
+.pago-row {
+  display: flex;
+  gap: 20px;
+}
+
+.pago-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #6a00ff, #9b00ff);
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  width: 400px;
+  animation: fadeIn .3s ease;
+}
+
+.modal-icon {
+  font-size: 80px;
+  color: #22c55e;
+}
+
+.modal-btn {
+  width: 70%;
+  padding: 12px;
+  background: #6a00ff;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* --- TOAST BONITO --- */
+.toast-bonito {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #6a00ff, #9b00ff);
+  padding: 18px 25px;
+  border-radius: 18px;
+  color: white;
+  font-size: 17px;
+  box-shadow: 0 8px 25px rgba(106,0,255,0.35);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: toastSlide 0.4s forwards;
+  z-index: 2000;
+}
+
+.toast-bonito i {
+  font-size: 22px;
+  color: #fff;
+}
+
+@keyframes toastSlide {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.toast-bonito-hide {
+  animation: toastHide 0.4s forwards;
+}
+
+@keyframes toastHide {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
